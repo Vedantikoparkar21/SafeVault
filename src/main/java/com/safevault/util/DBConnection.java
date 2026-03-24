@@ -11,11 +11,19 @@ public class DBConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            con = DriverManager.getConnection(
-                "jdbc:mysql://centerbeam.proxy.rlwy.net:49268/railway",
-                "root",
-                "xMdSIvopVWdGukNXDQtrfVTaIHBQqfqd"
-            );
+            String url = "jdbc:mysql://centerbeam.proxy.rlwy.net:49268/railway"
+                    + "?useSSL=true"
+                    + "&requireSSL=true"
+                    + "&verifyServerCertificate=false"
+                    + "&allowPublicKeyRetrieval=true"
+                    + "&serverTimezone=UTC";
+
+            String user = "root";
+            String password = "xMdSIvopVWdGukNXDQtrfVTaIHBQqfqd";
+
+            con = DriverManager.getConnection(url, user, password);
+
+            System.out.println("✅ Database Connected Successfully");
 
         } catch (Exception e) {
             e.printStackTrace();
