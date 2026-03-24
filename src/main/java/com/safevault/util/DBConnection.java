@@ -12,11 +12,10 @@ public class DBConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             String url = "jdbc:mysql://centerbeam.proxy.rlwy.net:49268/railway"
-                    + "?useSSL=true"
-                    + "&requireSSL=true"
-                    + "&verifyServerCertificate=false"
+                    + "?useSSL=false"
                     + "&allowPublicKeyRetrieval=true"
-                    + "&serverTimezone=UTC";
+                    + "&serverTimezone=UTC"
+                    + "&autoReconnect=true";
 
             String user = "root";
             String password = "xMdSIvopVWdGukNXDQtrfVTaIHBQqfqd";
